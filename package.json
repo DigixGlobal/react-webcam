@@ -1,9 +1,12 @@
 {
   "name": "@digix/react-webcam",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React webcam component",
-  "main": "src/react-webcam.js",
+  "main": "dist/react-webcam.js",
   "scripts": {
+    "prepublish": "npm run build:umd",
+    "build": "webpack src/react-webcam.js dist/react-webcam.js",
+    "build:umd": "npm run build && NODE_ENV=production webpack src/react-webcam.js dist/react-webcam.min.js",
     "lint": "eslint src"
   },
   "repository": {
